@@ -18,7 +18,6 @@ Route::post('/employee' , function (Request $request) {
     $employee->matricula = $request->input('matricula');
     $departament_id = $request->input('departament_id');
     $departament = Departament::find($departament_id );
-    $employee->departament()->associate($departament);
     $employee->save();
     return response()->json($employee);
    });
